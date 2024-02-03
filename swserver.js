@@ -7,5 +7,5 @@ http.createServer(function (request, response) {
     response.writeHead(200, {'Content-Type': 'text/plain'});
 
     // 发送响应数据 "Hello World"
-    response.end('from load Worldd 8091\n');
+    response.end('setcond2 8091\n');
 }).listen(8089);

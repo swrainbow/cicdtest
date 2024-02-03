@@ -13,6 +13,7 @@ jobs:
           script: |
             whoami
             cd ~/sw
+            nvm use v16.20.2
             rm -rf cicdtest
             git clone https://github.com/swrainbow/cicdtest.git
             cd cicdtest

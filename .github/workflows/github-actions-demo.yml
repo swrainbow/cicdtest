@@ -9,11 +9,13 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PWD }}
-          script_stop: true
           script: |
             whoami
             cd ~/sw
             nvm use v16.20.2
+            cd cicdtest
+            pm2 stop swserver.js
+            cd ..
             rm -rf cicdtest
             git clone https://github.com/swrainbow/cicdtest.git
             cd cicdtest

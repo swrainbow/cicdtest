@@ -1,0 +1,19 @@
+name: Git test
+on: [push]
+jobs:
+  Check-Github-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@master
+        width:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PWD }}
+          script_stop: true
+          script: |
+            whoami
+            cd ~/sw
+            ls -l
+            touch hello.txt
+            echo ${{ secrets.HOST }} >> hello.txt
+
